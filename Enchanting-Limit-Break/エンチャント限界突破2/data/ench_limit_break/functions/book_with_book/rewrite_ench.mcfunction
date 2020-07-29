@@ -35,6 +35,7 @@ execute store result entity @s Item.tag.StoredEnchantments[{id:"minecraft:infini
 execute store result entity @s Item.tag.StoredEnchantments[{id:"minecraft:mending"}].lvl short 1 if score @s Mending matches 1 run scoreboard players get @s Mending
 execute store result entity @s Item.tag.StoredEnchantments[{id:"minecraft:multishot"}].lvl short 1 if score @s Multishot matches 1 run scoreboard players get @s Multishot
 execute store result entity @s Item.tag.StoredEnchantments[{id:"minecraft:silk_touch"}].lvl short 1 if score @s SilkTouch matches 1 run scoreboard players get @s SilkTouch
+execute store result entity @s Item.tag.StoredEnchantments[{id:"minecraft:silk_touch"}].lvl short 1 if score @s SoulSpeed matches ..10 run scoreboard players get @s SoulSpeed
 
 scoreboard players reset * BaneOfArthropods
 scoreboard players reset * BlastProtection
@@ -71,6 +72,7 @@ scoreboard players reset * Infinity
 scoreboard players reset * Mending
 scoreboard players reset * Multishot
 scoreboard players reset * SilkTouch
+scoreboard players reset * SoulSpeed
 
 execute as @e[tag=ench_to] at @s run function ench_limit_break:success
 execute as @s[tag=ench_to] run kill @e[nbt={Item:{tag:{StoredEnchantments:[{}]}}},limit=1,sort=nearest,distance=..1,tag=!ench_to]
